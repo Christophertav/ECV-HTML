@@ -1,0 +1,138 @@
+body {
+  overflow-x: hidden;
+  background-color: #093f56;
+  animation: bgDarken 10s linear;
+}
+
+.machine {
+  position: relative;
+
+  margin-top: 10%;
+  width: 100%;
+
+  .belt-container {
+    position: absolute;
+    left: -1500px;
+    animation: moveBelt 30s infinite linear;
+  }
+
+  .belt {
+    position: absolute;
+    top: -5px;
+
+    height: 5px;
+    width: 100px;
+
+    background-color: black;
+
+    .cake {
+      .layer {
+        border-radius: 5px 5px 0 0;
+      }
+
+      .layer-1 {
+        position: relative;
+        top: -25px;
+        left: 12.5px;
+
+        border-radius: 0;
+        height: 25px;
+        width: 75%;
+      }
+
+      .filling {
+        position: relative;
+        top: -50px;
+        left: 12.5px;
+
+        height: 3px;
+        width: 75%;
+
+        background-color: white;
+      }
+
+      .layer-2 {
+        position: relative;
+        top: -73px;
+        left: 12.5px;
+
+        height: 20px;
+        width: 75%;
+      }
+
+      .topping {
+        position: relative;
+        top: -98px;
+        left: 20px;
+
+        height: 5px;
+        width: 60%;
+      }
+
+      .candle {
+        position: absolute;
+        top: -65px;
+        left: calc(50% - 12.5px);
+
+        height: 3px;
+        width: 25px;
+
+        background-color: white;
+
+        transform: rotate(90deg);
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: -1px;
+          left: -10px;
+          right: 25px;
+
+          height: 5px;
+
+          background-color: orange;
+          box-shadow: 0 0 140px 15px yellow;
+          animation: candleFlicker 3s linear infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes moveBelt {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: -1500px;
+  }
+}
+
+@keyframes candleFlicker {
+  0% {
+    box-shadow: none;
+  }
+
+  5% {
+    box-shadow: 0 0 75px 10px yellow;
+  }
+
+  15% {
+    box-shadow: none;
+  }
+
+  18% {
+    box-shadow: 0 0 75px 10px yellow;
+  }
+
+  100% {
+    box-shadow: 0 0 140px 15px yellow;
+  }
+}
+
+#mc_embed_signup {
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
+  width: 600px;
+}
